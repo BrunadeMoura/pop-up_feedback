@@ -21,13 +21,20 @@ export function FeedbackContentStep({
 
     const feedbackTypeInfo = feedbackTypes[feedbackType]
    
-    function handleSubmitFeedback(event: FormEvent) {
+    async function handleSubmitFeedback(event: FormEvent) {
         event.preventDefault();
 
-        console.log({
-            screenshot,
+        await fetch('http://localhost:3333/feedbacks', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            type: feedbackType,
             comment,
-        })
+            screenshot,
+        }),
+    });
 
         onFeedbackSent();
     }
