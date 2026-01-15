@@ -23,3 +23,6 @@ dist-ssr
 *.njsproj
 *.sln
 .vscode/*
+ 
+# Database files
+dev.db
