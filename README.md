@@ -13,16 +13,44 @@ Este projeto foi retomado após alguns anos sem manutenção e passou por ajuste
 ```
 pop-up_feedback/
 ├─ server/        # Back-end
-│    ├── prisma/
-│    │   └── schema.prisma
-│    ├── src/
-│    │   └── server.ts
-│    ├── .env
-│    ├── package.json
-│    ├── tsconfig.json
-│    └── README.md
+│    ├─ prisma/
+│    │    ├─ migrations/
+│    │    └─ schema.prisma
+│    │
+│    ├─ src/
+│    │    ├─ adapters/
+│    │    ├─ repositories/
+│    │    ├─ use-cases/
+│    │    ├─ prisma.ts
+│    │    ├─ routes.ts
+│    │    └─ server.ts
+│    │
+│    ├─ package-lock.json
+│    ├─ package.json
+│    └─ tsconfig.json
 │
-└── web/           # Front-end
+├─ web/           # Front-end
+│    ├─ src/
+│    │    ├─ assets/
+│    │    ├─ components/
+│    │    ├─ App.css
+│    │    ├─ App.tsx
+│    │    ├─ global.css
+│    │    ├─ main.tsx
+│    │    └─ vite-env.d.ts
+│    │
+│    ├─ index.html
+│    ├─ package-lock.json
+│    ├─ package.json
+│    ├─ postcss.config.js
+│    ├─ tailwind.config.js
+│    ├─ tsconfig.json
+│    ├─ tsconfig.node.json
+│    └─ vite.config.ts
+│
+├─ .gitignore
+├─ LICENSE.md
+└─ README.md
 ```
 
 ---
@@ -101,8 +129,11 @@ npm run dev
 
 Saída esperada:
 ```
-ts-node-dev src/server.ts
-está funcionando o servidor
+> server@1.0.0 dev
+> ts-node-dev src/server.ts
+
+[INFO] 16:26:58 ts-node-dev ver. 1.1.8 (using ts-node ver. 9.1.1, typescript ver. 4.6.4)
+servidor rodando na porta 3333
 ```
 
 Em outro terminal, na pasta web, utilize o comando abaixo para iniciar o front-end e ter como acessar via local host:
