@@ -11,5 +11,5 @@ app.use(routes);
 
 
 app.listen(3333, () => {
-    console.log('está funcionando o servidor')
+    console.log('servidor rodando na porta 3333');
 });
